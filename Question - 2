@@ -1,0 +1,25 @@
+// Question - 2
+
+function uniqueCharacter(s) {
+    for (let i = 0; i < s.length; i++) {
+        let isUnique = true;
+
+        for (let j = 0; j < s.length; j++) {
+            if (i !== j && s[i] === s[j]) {
+                isUnique = false;
+                break;
+            }
+        }
+        if (isUnique) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+let s = 'leetcode'            // Example - 1
+let s = "loveleetcode"      // Example - 2
+let s = "aabb"            // Example - 3
+
+let result = uniqueCharacter(s);
+console.log(result);
